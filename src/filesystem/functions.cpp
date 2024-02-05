@@ -318,13 +318,13 @@ void writeConfig()
   }
   StaticJsonDocument<768> settingsDoc;
 
-  settingsDoc["i18n"] = i18n;                           // "de"
-  settingsDoc["mesh_prefix"] = mesh_prefix;             // "FMEMesh"
-  settingsDoc["mesh_password"] = mesh_password;         // "somethingSneaky"
-  settingsDoc["mesh_port"] = mesh_port;                 // 5555
-  settingsDoc["mesh_channel"] = mesh_channel;           // 6
-  settingsDoc["mesh_containsRoot"] = mesh_containsRoot; // true
-  settingsDoc["mesh_isRoot"] = mesh_isRoot;             // true
+  settingsDoc["i18n"] = i18n;
+  settingsDoc["mesh_prefix"] = mesh_prefix;
+  settingsDoc["mesh_password"] = mesh_password;
+  settingsDoc["mesh_port"] = mesh_port;
+  settingsDoc["mesh_channel"] = mesh_channel;
+  settingsDoc["mesh_containsRoot"] = mesh_containsRoot;
+  settingsDoc["mesh_isRoot"] = mesh_isRoot;
   serializeJson(settingsDoc, settingsFS);
   settingsFS.close();
 }
@@ -369,14 +369,13 @@ void readConfig()
     return;
   }
 
-  String helper1 = settingsDoc["i18n"];
   String helper3 = settingsDoc["mesh_prefix"];
-  mesh_prefix = helper3; // "FMEMesh"
+  mesh_prefix = helper3;
   String helper4 = settingsDoc["mesh_password"];
-  mesh_password = helper4;                              // "somethingSneaky"
-  mesh_port = settingsDoc["mesh_port"];                 // 5555
-  mesh_channel = settingsDoc["mesh_channel"];           // 6
-  mesh_containsRoot = settingsDoc["mesh_containsRoot"]; // true
-  mesh_isRoot = settingsDoc["mesh_isRoot"];             // true
+  mesh_password = helper4;
+  mesh_port = settingsDoc["mesh_port"];
+  mesh_channel = settingsDoc["mesh_channel"];
+  mesh_containsRoot = settingsDoc["mesh_containsRoot"];
+  mesh_isRoot = settingsDoc["mesh_isRoot"];
   settingsFS.close();
 }
