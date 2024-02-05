@@ -1,6 +1,6 @@
 enum deviceType{
-Controller = 1,
-Bridge = 2,
-Melder = 10,
-Manometer = 20
+CONTROLLER = 1,
+BRIDGE = 2,
+MEDLER = 10,
+MANOMETER = 20
 };
