@@ -1,5 +1,7 @@
 #include <Arduino.h>
 
+#include <ESPLib.h>
+
 #include "filesystem\functions.h"
 #include "i18n\functions.h"
 #include "math\functions.h"

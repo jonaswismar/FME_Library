@@ -45,7 +45,22 @@ int totalBytes()
     return FFat.totalBytes();
   }
 #elif defined(ESP8266)
-  return 0;
+  if (spiffs_active == true)
+  {
+    FSInfo fs_info;
+    SPIFFS.info(fs_info);
+    return fs_info.totalBytes;
+  }
+  else if (littlefs_active == true)
+  {
+    FSInfo fs_info;
+    LittleFS.info(fs_info);
+    return fs_info.totalBytes;
+  }
+  else
+  {
+    return 0;
+  }
 #endif
 }
 
@@ -56,12 +71,31 @@ int usedBytes()
   {
     return SPIFFS.usedBytes();
   }
+  else if (littlefs_active == true)
+  {
+    return LittleFS.usedBytes();
+  }
   else
   {
     return FFat.usedBytes();
   }
 #elif defined(ESP8266)
-  return 0;
+  if (spiffs_active == true)
+  {
+    FSInfo fs_info;
+    SPIFFS.info(fs_info);
+    return fs_info.usedBytes;
+  }
+  else if (littlefs_active == true)
+  {
+    FSInfo fs_info;
+    LittleFS.info(fs_info);
+    return fs_info.usedBytes;
+  }
+  else
+  {
+    return 0;
+  }
 #endif
 }
 
