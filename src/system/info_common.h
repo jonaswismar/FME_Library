@@ -2,9 +2,9 @@
 
 #include <ESPLib.h>
 
-#include "filesystem\functions.h"
-#include "i18n\functions.h"
-#include "math\functions.h"
+#include "filesystem\functions_common.h"
+#include "i18n\functions_common.h"
+#include "math\functions_common.h"
 
 #include "variables.h"
 

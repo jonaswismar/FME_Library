@@ -3,7 +3,7 @@
 #include <FS.h>
 #include <LittleFS.h>
 
-#include "math\functions.h"
+#include "math\functions_common.h"
 #include "variables.h"
 
 String isType();
