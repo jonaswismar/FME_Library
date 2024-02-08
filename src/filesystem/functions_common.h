@@ -4,7 +4,7 @@
 #include <LittleFS.h>
 
 #include "math\functions_common.h"
-#include "variables.h"
+#include "variables_common.h"
 
 String isType();
 

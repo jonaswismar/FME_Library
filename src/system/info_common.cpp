@@ -6,7 +6,7 @@
 #include "i18n\functions_common.h"
 #include "math\functions_common.h"
 
-#include "variables.h"
+#include "variables_common.h"
 
 const String divider = "/";
 const String unitMHz = " MHz";
